@@ -1,0 +1,15 @@
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;--bg:#080e1b;--surface:#152236;--key:#1d2b40;--mint:#4ce0c1;--text:#f4f8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0%,#1c3148,var(--bg) 60%);color:var(--text)}
+.shell{min-height:100dvh;display:grid;place-items:center;padding:max(18px,env(safe-area-inset-top)) 16px max(18px,env(safe-area-inset-bottom))}
+.calculator{width:min(100%,420px);border:1px solid #314052;border-radius:30px;padding:25px;background:linear-gradient(155deg,#152236,#0c1626);box-shadow:0 24px 80px #0007}
+header,footer{display:flex;align-items:center;justify-content:space-between;gap:12px}small{font-size:10px;letter-spacing:2px;color:#91a0b7}h1{font-size:22px;margin:2px 0}.badge{color:#72d9bf;background:#153b38;border-radius:30px;padding:7px 10px;font-size:11px;white-space:nowrap}
+.screen{min-height:148px;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:10px;background:linear-gradient(155deg,#101b2b,#142236);border:1px solid #26364b;border-radius:18px;margin:24px 0 17px;padding:22px 13px;overflow:hidden}
+.expression{color:#91a0b7;font-size:17px;min-height:22px;max-width:100%;overflow:hidden;white-space:nowrap}output{display:block;width:100%;text-align:right;font-size:clamp(35px,9vw,54px);line-height:1.15;font-weight:600;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}output.compact{font-size:clamp(23px,6vw,37px)}
+.keypad{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}button{font:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.keypad button{min-width:0;min-height:65px;background:var(--key);border:1px solid #34445b;border-radius:16px;color:var(--text);font-size:27px;user-select:none}
+.keypad button.utility{background:#2a3b52;font-size:23px}.keypad button.operator{background:#234953;color:var(--mint);font-size:30px}.keypad button.equals{background:var(--mint);color:#10242a;border-color:var(--mint);font-weight:700;font-size:32px}
+button:active{transform:scale(.95)}button:focus-visible{outline:3px solid #7ff5dc;outline-offset:3px}
+footer{font-size:11px;color:#91a0b7;min-height:40px;margin:15px 3px 0}#install-button{background:#183b3b;border:1px solid #38796e;color:#a9f9e6;border-radius:9px;padding:7px 10px}#install-button[hidden]{display:none}
+@media(max-width:380px){.calculator{padding:18px}.keypad{gap:8px}.keypad button{min-height:58px;border-radius:13px}.screen{min-height:125px}}
+@media(max-height:690px){.shell{align-items:start}.keypad button{min-height:54px}.screen{min-height:110px;margin-top:14px;margin-bottom:12px}}
+@media(prefers-reduced-motion:reduce){button:active{transform:none}}
